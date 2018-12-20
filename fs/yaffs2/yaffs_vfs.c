@@ -2815,7 +2815,7 @@ static int yaffs_parse_options(struct yaffs_options *options,
 static struct dentry *yaffs_make_root(struct inode *inode)
 {
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(3, 4, 0))
-	struct dentry *root = d_alloc_root(inode);
+	struct dentry *root = d_make_root(inode);
 
 	if (!root)
 		iput(inode);
